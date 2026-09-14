@@ -1,0 +1,111 @@
+{
+  "entities": {
+    "users": {
+      "title": "Student Profile",
+      "description": "Registered students, passengers, and campus drivers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "regNumber": { "type": "string" },
+        "course": { "type": "string" },
+        "batch": { "type": "string" },
+        "avatar": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "rating": { "type": "number" },
+        "totalRides": { "type": "number" },
+        "moneySaved": { "type": "number" },
+        "verifiedStudent": { "type": "boolean" },
+        "blockOrHostel": { "type": "string" },
+        "gender": { "type": "string" },
+        "accountType": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "regNumber"]
+    },
+    "rides": {
+      "title": "Campus Pool Rides",
+      "description": "Live and scheduled rides shared by students",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "driver": { "type": "object" },
+        "pickup": { "type": "object" },
+        "destination": { "type": "object" },
+        "currentLocationName": { "type": "string" },
+        "distanceFromUserKm": { "type": "number" },
+        "totalSeats": { "type": "number" },
+        "occupiedSeats": { "type": "number" },
+        "availableSeats": { "type": "number" },
+        "pricePerSeat": { "type": "number" },
+        "departureTime": { "type": "string" },
+        "estimatedArrival": { "type": "string" },
+        "vehicleType": { "type": "string" },
+        "vehicleNumber": { "type": "string" },
+        "status": { "type": "string" },
+        "routeStops": { "type": "array" },
+        "isGirlsOnly": { "type": "boolean" },
+        "notes": { "type": "string" },
+        "bookedByStudentIds": { "type": "array" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "pickup", "destination", "totalSeats", "availableSeats"]
+    },
+    "bookings": {
+      "title": "Ride Bookings",
+      "description": "Confirmed student bookings on campus pools",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "rideId": { "type": "string" },
+        "ride": { "type": "object" },
+        "seatsBooked": { "type": "number" },
+        "totalPrice": { "type": "number" },
+        "bookedAt": { "type": "string" },
+        "status": { "type": "string" },
+        "boardingOtp": { "type": "string" },
+        "pickupNote": { "type": "string" }
+      },
+      "required": ["id", "rideId", "seatsBooked"]
+    },
+    "ride_requests": {
+      "title": "Instant Passenger Ride Requests",
+      "description": "On-demand ride hailing requests within campus",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "passengerId": { "type": "string" },
+        "passengerName": { "type": "string" },
+        "passengerAvatar": { "type": "string" },
+        "pickupId": { "type": "string" },
+        "destinationId": { "type": "string" },
+        "pickupName": { "type": "string" },
+        "destinationName": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "expiresAt": { "type": "number" },
+        "acceptedAt": { "type": "number" },
+        "completedAt": { "type": "number" },
+        "driverId": { "type": "string" },
+        "driverName": { "type": "string" },
+        "driverAvatar": { "type": "string" },
+        "rejectedBy": { "type": "array" }
+      },
+      "required": ["id", "passengerId", "status", "createdAt"]
+    },
+    "wallets": {
+      "title": "Student VertoPay Wallets",
+      "description": "Balance and transactions for Verto auto pass",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "balance": { "type": "number" },
+        "transactions": { "type": "array" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "balance"]
+    }
+  }
+}

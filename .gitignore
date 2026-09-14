@@ -1,0 +1,22 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# Firebase local/admin credentials
+serviceAccountKey.json
+firebase-adminsdk-*.json
+
+# Build/dependency output
+node_modules/
+dist/
+build/

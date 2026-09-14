@@ -1,0 +1,8 @@
+{
+  "name": "REPORIDE",
+  "description": "Campus student ride-sharing platform exclusively within the university to share rides, split costs, and travel between campus gates, academic blocks, and hostel blocks.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

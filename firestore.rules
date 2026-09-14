@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Vertoride campus mobility collections
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+    match /rides/{rideId} {
+      allow read, write: if true;
+    }
+    match /bookings/{bookingId} {
+      allow read, write: if true;
+    }
+    match /ride_requests/{requestId} {
+      allow read, write: if true;
+    }
+    match /wallets/{walletId} {
+      allow read, write: if true;
+    }
+  }
+}
